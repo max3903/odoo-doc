@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="1">
+	<record id="doc_accounting" model="document.page">
+		<field name="name">Comptabilité</field>
+    <field name="type">category</field>
+  </record>
+
+	<!-- Import et ajout d'une carte de crédit. -->
+	<record id="credit_card_statement" model="document.page">
+		<field name="name">Import et ajout d'une carte de crédit.</field>
+ 		<field name="parent_id" ref="doc_accounting"/>
+ 		<field name="type">content</field>
+ 		<field name="content">
+			<![CDATA[
+				<h3>Description</h3>
+				<p>
+					Le système openERP vous permet d'ajouter une carte de crédit dans le
+ système et de le relier à un compte en banque spécifique.
+				</p>
+				<p><br></p>
+
+				<h3>Étape 1: récupération de votre état de compte.</h3>
+				<p>
+					Connectez-vous au site de votre banque et télécharger l'état de 
+compte au format OFX.
+				</p>
+	
+				<h3>Étape 2: import du fichier.</h3>
+				<p>
+					Allez dans "Comptabilité", "Banque et liquidités" puis cliquer sur 
+"Importer un état de compte."
+				</p>
+
+				<h3>Étape 3: créer des comptes pour votre carte de crédit.</h3>
+				<p>
+					Allez dans "Configuration", "Comptes" et "Comptes". Créer ici un 
+compte de débit et un compte de crédit pour votre carte de crédit.
+				</p>
+				<img src="/doc_accounting_fr/static/src/img/AccountCreation.png" 
+width="100%"><p><br></p>
+
+				<h3>Étape 4: créer un journal pour votre carte de crédit.</h3>
+				<p>
+					Allez dans "Configuration", "Journaux" et "Journaux". Créer ici 
+votre journal pour votre carte de crédit.
+				</p>
+				<img src="/doc_accounting_fr/static/src/img/JournalCreation.png" 
+width="100%"><p><br></p>
+
+				<p>
+					N'hésitez pas à consulter l'aide en ligne disponible sur le module 
+comptabilité à l'adresse suivante. https://doc.odoo.com/book/3/
+				</p>
+			]]>
+		</field>
+	</record>
+
+	<!-- Ajouter un compte dans la charte. -->
+	<record id="chart_account_add" model="document.page">
+		<field name="name">Ajout d'un compte dans la charte de compte.</field>
+ 		<field name="parent_id" ref="doc_accounting"/>
+ 		<field name="type">content</field>
+ 		<field name="content">
+			<![CDATA[
+				<h3>Description</h3>
+				<p>
+					L'ajout d'un compte dans le plan comptable se fait en deux étapes.
+				</p>
+				<p><br></p>
+
+				<h3>Étape 1: création du compte dans la base de données.</h3>
+				<p>
+					Allez dans "Comptabilité", "Comptes" et sélectionner "Comptes". Afin 
+d'inclure ce compte dans votre plan comptable, deux éléments sont essentiels 
+le numéro que vous allez lui donner et son parent, voir l'image ci-dessous 
+pour un exemple.
+				</p>
+				<p><br></p>
+				<img src="/doc_accounting_fr/static/src/img/ChartOfAccounts1.png" 
+width="100%"><p><br></p>
+	
+				<h3>Étape 2: contrôler dans le plan comptable.</h3>
+				<p>
+					Allez dans "Comptabilité", "Plan comptable" et "Plan comptable". 
+Vous avez à l'écran l'architecture de votre plam comptable.
+				</p>
+				<p><br></p>
+				<img src="/doc_accounting_fr/static/src/img/ChartOfAccounts2.png" 
+width="100%"><p><br></p>
+
+				<p>
+					N'hésitez pas à consulter l'aide en ligne disponible sur le module 
+comptabilité à l'adresse suivante. https://doc.odoo.com/book/3/
+				</p>
+			]]>
+		</field>
+	</record>
+
+	<!-- Clôturer un exercice. -->
+	<record id="exercice_end" model="document.page">
+		<field name="name">Clôture d'un exercice comptable.</field>
+ 		<field name="parent_id" ref="doc_accounting"/>
+ 		<field name="type">content</field>
+ 		<field name="content">
+			<![CDATA[
+				<h3>Description</h3>
+				<p>
+					Vous allez être amener à clôturer des exercices et des périodes, 
+voici comment procéder.
+				</p>
+				<p><br></p>
+
+				<h3>Étape 1: clôture d'une période.</h3>
+				<p>
+					Allez dans "Comptabilité", "Tâches périodiques", "Fin de période" et 
+enfin cliquer sur "Fermer une période". Ne seront ici que les périodes 
+actuellement ouvertes dans votre système.
+				</p>
+				<p><br></p>
+				<img src="/doc_accounting_fr/static/src/img/PeriodEnd.png" 
+width="100%"><p><br></p>
+	
+				<h3>Étape 2: clôture d'une période.</h3>
+				<p>
+					Allez dans "Comptabilité", "Tâches périodiques", "Fin de période" et 
+enfin cliquer sur "Fermer un exercice". L'assistant vous guidera dans le choix 
+de votre exercice à clôturer.
+				</p>
+				<p><br></p>
+				<img src="/doc_accounting_fr/static/src/img/ExerciceEnd.png" 
+width="100%"><p><br></p>
+
+				<p>
+					N'hésitez pas à consulter l'aide en ligne disponible sur le module 
+comptabilité à l'adresse suivante. https://doc.odoo.com/book/3/
+				</p>
+			]]>
+		</field>
+	</record>
+
+  <!-- Saisie d'une facture, note de crédit. -->
+	<record id="invoice_refund" model="document.page">
+		<field name="name">Saisie d'une facture et d'une note de crédit.</field>
+ 		<field name="parent_id" ref="doc_accounting"/>
+ 		<field name="type">content</field>
+ 		<field name="content">
+			<![CDATA[
+				<h3>Description</h3>
+				<p>
+					Les opérations les plus courantes que vous allez être amené exécuter
+ sont la saisie des factures et de notes de crédit, qu'elles soient clientes 
+ou fournisseurs.
+				</p>
+				<p><br></p>
+
+				<h3>Étape 1: saisie d'une facture client ou fournisseur.</h3>
+				<p>
+					Allez dans "Comptabilité", "Factures clients" et cliquer sur créer. 
+N'hésitez pas à compléter les champs dans les onglets "Autres informations" et 
+"Réglements".
+				</p>
+				<p><br></p>
+				<img src="/doc_accounting_fr/static/src/img/InvoiceCreation.png" 
+width="100%"><p><br></p>
+	
+				<h3>Étape 2: saisie d'une note de crédit.</h3>
+				<p>
+					Allez dans "Comptabilité", "Avoirs clients" et cliquer sur créer. 
+N'hésitez pas à compléter les champs dans les onglets "Autres informations" et 
+"Réglements".
+				</p>
+				<p><br></p>
+				<img src="/doc_accounting_fr/static/src/img/RefundCreation.png" 
+width="100%"><p><br></p>
+
+				<p>
+					N'hésitez pas à consulter l'aide en ligne disponible sur le module 
+comptabilité à l'adresse suivante. https://doc.odoo.com/book/3/
+				</p>
+			]]>
+		</field>
+	</record>
+
+  <!-- Faire un paiement. -->
+	<record id="payment_method" model="document.page">
+		<field name="name">Saisie d'un paiement.</field>
+ 		<field name="parent_id" ref="doc_accounting"/>
+ 		<field name="type">content</field>
+ 		<field name="content">
+			<![CDATA[
+				<h3>Description</h3>
+				<p>
+					La saisie d'un paiement qu'il soit client ou fournisseur est une 
+opération courante en comptabilité.
+				</p>
+				<p><br></p>
+
+				<h3>Étape 1: saisie d'un paiement client ou fournisseur.</h3>
+				<p>
+					Allez dans "Comptabilité", "Paiements fournisseurs" et cliquer sur 
+créer. Vous devrez ici saisir les informations relatives à votre 
+enregistrement mais aussi ajouter la ou les écritures comptables en relation 
+avec celui-ci.
+				</p>
+				<p><br></p>
+				<img src="/doc_accounting_fr/static/src/img/PaymentCreation.png" 
+width="100%"><p><br></p>
+	
+				<h3>Étape 2: vérification de l'enregistrement.</h3>
+				<p>
+					Allez dans "Comptabilité", "Pièces comptables" et rechercher votre 
+paiment précédemment créer. Vous aurez la possiblité de la poster si vous 
+juger
+ l'entrée complète.
+				</p>
+				<p><br></p>
+				<img src="/doc_accounting_fr/static/src/img/PaymentValidation.png"
+ width="100%"><p><br></p>
+
+				<p>
+					N'hésitez pas à consulter l'aide en ligne disponible sur le module 
+comptabilité à l'adresse suivante. https://doc.odoo.com/book/3/
+				</p>
+			]]>
+		</field>
+	</record>
+
+
+	<!-- Faire une conciliation manuelle. -->
+	<record id="manual_reconciliation" model="document.page">
+		<field name="name">Faire une conciliation manuelle.</field>
+ 		<field name="parent_id" ref="doc_accounting"/>
+ 		<field name="type">content</field>
+ 		<field name="content">
+			<![CDATA[
+				<h3>Description</h3>
+				<p>
+					La saisie d'un paiement qu'il soit client ou fournisseur est une 
+opération courante en comptabilité.
+				</p>
+				<p><br></p>
+
+				<h3>Étape 1: saisie d'un paiement client ou fournisseur.</h3>
+				<p>
+					Allez dans "Comptabilité", "Paiements fournisseurs" et cliquer sur 
+créer. Vous devrez ici saisir les informations relatives à votre 
+enregistrement
+ mais aussi ajouter la ou les écritures comptables en relation avec celui-ci.
+				</p>
+				<p><br></p>
+				<img src="/doc_accounting_fr/static/src/img/PaymentCreation.png" 
+width="100%"><p><br></p>
+	
+				<h3>Étape 2: vérification de l'enregistrement.</h3>
+				<p>
+					Allez dans "Comptabilité", "Pièces comptables" et rechercher votre 
+paiement précédemment créer. Vous aurez la possiblité de la poster si vous 
+juger l'entrée complète.
+				</p>
+				<p><br></p>
+				<img src="/doc_accounting_fr/static/src/img/PaymentValidation.png" 
+width="100%"><p><br></p>
+
+				<p>
+					N'hésitez pas à consulter l'aide en ligne disponible sur le module 
+comptabilité à l'adresse suivante. https://doc.odoo.com/book/3/
+				</p>
+			]]>
+		</field>
+	</record>
+
+	</data>
+</openerp>
